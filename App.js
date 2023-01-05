@@ -1,14 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+} from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchBar}>
-      <Text>Search</Text>
+        <Text>Search</Text>
       </View>
       <View style={styles.list}>
-      <Text>List</Text>
+        <Text>List</Text>
       </View>
     </SafeAreaView>
   );
@@ -17,16 +24,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   searchBar: {
     padding: 10,
-    backgroundColor: 'green'
+    backgroundColor: "green",
   },
   list: {
     flexGrow: 1,
     padding: 10,
-    backgroundColor: 'blue'
-  }
+    backgroundColor: "blue",
+  },
 });
