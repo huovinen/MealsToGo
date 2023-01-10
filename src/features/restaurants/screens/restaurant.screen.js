@@ -6,7 +6,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  padding-top: ${Platform.OS === "android" ? StatusBar.currentHeight : 0};
+  padding-top: ${Platform.OS === "android" ? StatusBar.currentHeight : 0}px;
 `;
 
 const SearchContainer = styled.View`
