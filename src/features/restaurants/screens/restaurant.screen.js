@@ -20,12 +20,18 @@ const Search = styled(Searchbar)`
   background-color: ${(props) => props.theme.colors.ui.quaternary};
 `;
 
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
+
 export const RestaurantsScreen = () => (
   <SafeArea>
     <SearchContainer>
       <Search placeholder="Search" />
     </SearchContainer>
-    <FlatList
+    <RestaurantList
       data={[
         { name: 1 },
         { name: 2 },
