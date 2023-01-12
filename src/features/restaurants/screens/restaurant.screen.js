@@ -4,11 +4,7 @@ import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { RestaurantCard } from "../components/restaurant-info-card-styles";
-
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  padding-top: ${Platform.OS === "android" ? StatusBar.currentHeight : 0}px;
-`;
+import { SafeArea } from "../../../utility/safe-area.component";
 
 const SearchContainer = styled.View`
   flex-direction: column;
