@@ -13,6 +13,8 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { SafeArea } from "./src/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
