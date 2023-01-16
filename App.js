@@ -12,8 +12,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { SafeArea } from "./src/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
-
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -67,19 +66,21 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={createScreenOptions}
-          tabBarOptions={{
-            activeTintColor: "tomato",
-            inactiveTintColor: "gray",
-          }}
-        >
-          <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-          <Tab.Screen name="Map" component={MapScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <RestaurantsContextProvider>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              activeTintColor: "tomato",
+              inactiveTintColor: "gray",
+            }}
+          >
+            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+            <Tab.Screen name="Map" component={MapScreen} />
+            <Tab.Screen name="Settings" component={SettingsScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </RestaurantsContextProvider>
     </ThemeProvider>
   );
 }
